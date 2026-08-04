@@ -1,0 +1,11 @@
+name: MyApp
+options:
+  bundleIdPrefix: com.fhi
+targets:
+  MyApp:
+    type: application
+    platform: iOS
+    deploymentTarget: "15.0"
+    sources: [Sources]
+    info:
+      path: Sources/Info.plist
