@@ -5,16 +5,16 @@ workflows:
     integrations:
       app_store_connect: Codemagic
     environment:
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: com.fhi.my
       xcode: latest
     scripts:
-      - name: Wymuszenie utworzenia certyfikatow (Code Signing)
-        script: |
-          app-store-connect fetch-signing-files "com.fhi.my" --type IOS_APP_STORE --create
       - name: Generowanie projektu (xcodegen)
         script: |
           brew install xcodegen
           xcodegen generate
-      - name: Budowa aplikacji
+      - name: Budowa i podpisywanie aplikacji
         script: |
           xcode-project build-ipa --project "MyApp.xcodeproj" --scheme "MyApp"
     publishing:
