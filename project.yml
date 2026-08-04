@@ -1,11 +1,11 @@
 name: MyApp
-options:
-  bundleIdPrefix: com.fhi
 targets:
   MyApp:
     type: application
     platform: iOS
     deploymentTarget: "15.0"
-    sources: [Sources]
-    info:
-      path: Sources/Info.plist
+    sources: [MyApp]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.fhi.my
+        CODE_SIGN_STYLE: Manual
