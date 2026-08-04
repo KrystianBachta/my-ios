@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleName</key>
+    <string>my.</string>
+    <key>CFBundleDisplayName</key>
+    <string>my.</string>
+    <key>CFBundleIdentifier</key>
+    <string>com.fhi.my</string>
+    <key>CFBundleShortVersionString</key>
+    <string>1.0</string>
+    <key>CFBundleVersion</key>
+    <string>1</string>
+    <key>NSCameraUsageDescription</key>
+    <string>Aplikacja wymaga dostępu do aparatu, aby dodać zdjęcie profilowe.</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>Aplikacja wymaga dostępu do galerii, aby wgrać zdjęcia.</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Aplikacja używa lokalizacji do wyszukiwania osób w pobliżu.</string>
+</dict>
+</plist>
