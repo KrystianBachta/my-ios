@@ -2,16 +2,22 @@ workflows:
   ios-app-build:
     name: Budowa aplikacji iOS
     instance_type: mac_mini_m2
+    integrations:
+      app_store_connect: Codemagic
     environment:
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: com.fhi.my
       xcode: latest
     scripts:
       - name: Generowanie struktury projektu
         script: |
           brew install xcodegen
           xcodegen generate
-      - name: Budowanie pliku IPA (bez certyfikatów)
+      - name: Budowa i podpisywanie
         script: |
-          xcodebuild build -project "MyApp.xcodeproj" -scheme "MyApp" -destination 'generic/platform=iOS' CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
-    artifacts:
-      - /tmp/xcodebuild_logs/*.log
-      - build/ios/ipa/*.ipa
+          xcode-project build-ipa --project "MyApp.xcodeproj" --scheme "MyApp"
+    publishing:
+      app_store_connect:
+        auth: integration
+        submit_to_testflight: true
