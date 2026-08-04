@@ -1,23 +1,12 @@
-workflows:
-  ios-app-build:
-    name: Budowa aplikacji iOS
-    instance_type: mac_mini_m2
-    integrations:
-      app_store_connect: Codemagic
-    environment:
-      ios_signing:
-        distribution_type: app_store
-        bundle_identifier: com.fhi.my
-      xcode: latest
-    scripts:
-      - name: Generowanie struktury projektu
-        script: |
-          brew install xcodegen
-          xcodegen generate
-      - name: Budowa i podpisywanie
-        script: |
-          xcode-project build-ipa --project "MyApp.xcodeproj" --scheme "MyApp"
-    publishing:
-      app_store_connect:
-        auth: integration
-        submit_to_testflight: true
+name: MyApp
+options:
+  bundleIdPrefix: com.fhi
+targets:
+  MyApp:
+    type: application
+    platform: iOS
+    deploymentTarget: "15.0"
+    sources: [MyApp]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.fhi.my
