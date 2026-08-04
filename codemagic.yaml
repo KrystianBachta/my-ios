@@ -10,11 +10,11 @@ workflows:
         bundle_identifier: com.fhi.my
       xcode: latest
     scripts:
-      - name: Generowanie struktury projektu
+      - name: Generowanie projektu (xcodegen)
         script: |
           brew install xcodegen
           xcodegen generate
-      - name: Budowa i podpisywanie
+      - name: Budowa i podpisywanie aplikacji
         script: |
           xcode-project build-ipa --project "MyApp.xcodeproj" --scheme "MyApp"
     publishing:
