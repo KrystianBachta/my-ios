@@ -5,15 +5,11 @@ workflows:
     integrations:
       app_store_connect: Codemagic
     environment:
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: com.fhi.my
       xcode: latest
     scripts:
-      - name: Pobieranie i wymuszenie certyfikatów
-        script: |
-          app-store-connect fetch-signing-files "com.fhi.my" --type IOS_APP_STORE --create
-      - name: Inicjalizacja pęku kluczy
-        script: |
-          keychain initialize
-          keychain add-certificates
       - name: Generowanie projektu (xcodegen)
         script: |
           brew install xcodegen
