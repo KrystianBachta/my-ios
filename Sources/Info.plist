@@ -13,13 +13,13 @@
     <key>CFBundleShortVersionString</key>
     <string>1.0</string>
     <key>CFBundleVersion</key>
-    <string>7</string>
+    <string>8</string>
     <key>LSRequiresIPhoneOS</key>
     <true/>
     <key>CFBundleIconName</key>
     <string>AppIcon</string>
-    <key>UILaunchImageName</key>
-    <string>LaunchImage</string>
+    <key>UILaunchScreen</key>
+    <dict/>
     <key>UIRequiresFullScreen</key>
     <true/>
 </dict>
