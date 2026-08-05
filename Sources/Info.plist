@@ -18,5 +18,9 @@
     <true/>
     <key>CFBundleIconName</key>
     <string>AppIcon</string>
+    <key>UILaunchScreen</key>
+    <dict/>
+    <key>UIRequiresFullScreen</key>
+    <true/>
 </dict>
 </plist>
