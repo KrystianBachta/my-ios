@@ -4,7 +4,7 @@ targets:
     type: application
     platform: iOS
     deploymentTarget: "15.0"
-    sources: [MyApp]
+    sources: [Sources]
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.fhi.my
