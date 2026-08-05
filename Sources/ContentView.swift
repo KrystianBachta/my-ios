@@ -1,28 +1,22 @@
 import SwiftUI
+import WebKit
+
+struct WebView: UIViewRepresentable {
+    let url: URL
+
+    func makeUIView(context: Context) -> WKWebView {
+        return WKWebView()
+    }
+
+    func updateUIView(_ uiView: WKWebView, context: Context) {
+        let request = URLRequest(url: url)
+        uiView.load(request)
+    }
+}
 
 struct ContentView: View {
-    @State private var trackingNumber = ""
-    
     var body: some View {
-        NavigationView {
-            List {
-                Section(header: Text("Śledzenie przesyłek")) {
-                    TextField("Wprowadź numer listu przewozowego", text: $trackingNumber)
-                    Button(action: {
-                        // Akcja wyszukiwania
-                    }) {
-                        Text("Szukaj")
-                            .frame(maxWidth: .infinity, alignment: .center)
-                    }
-                }
-                
-                Section(header: Text("Aktywne zlecenia logistyczne")) {
-                    Text("Brak aktywnych tras")
-                        .foregroundColor(.gray)
-                        .italic()
-                }
-            }
-            .navigationTitle("Moje Zlecenia")
-        }
+        WebView(url: URL(string: "https://my.fhi.pl")!)
+            .ignoresSafeArea()
     }
 }
