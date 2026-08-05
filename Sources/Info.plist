@@ -13,7 +13,7 @@
     <key>CFBundleShortVersionString</key>
     <string>1.0</string>
     <key>CFBundleVersion</key>
-    <string>9</string>
+    <string>10</string>
     <key>LSRequiresIPhoneOS</key>
     <true/>
     <key>CFBundleIconName</key>
@@ -22,5 +22,7 @@
     <dict/>
     <key>UIRequiresFullScreen</key>
     <true/>
+    <key>GADApplicationIdentifier</key>
+    <string>ca-app-pub-6681851361306996~6425685380</string>
 </dict>
 </plist>
