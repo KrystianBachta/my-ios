@@ -20,6 +20,8 @@ workflows:
       - name: Budowa aplikacji
         script: |
           xcode-project build-ipa --project "MyApp.xcodeproj" --scheme "MyApp"
+    artifacts:
+      - build/ios/ipa/*.ipa
     publishing:
       app_store_connect:
         auth: integration
