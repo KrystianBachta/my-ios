@@ -1,10 +1,16 @@
 name: MyApp
+packages:
+  GoogleMobileAds:
+    url: https://github.com/googleads/swift-package-manager-google-mobile-ads
+    from: 11.2.0
 targets:
   MyApp:
     type: application
     platform: iOS
     deploymentTarget: "15.0"
     sources: [Sources]
+    dependencies:
+      - package: GoogleMobileAds
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.fhi.my
