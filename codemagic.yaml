@@ -19,7 +19,7 @@ workflows:
           xcode-project use-profiles
       - name: Budowa aplikacji
         script: |
-          xcode-project build-ipa --project "MyApp.xcodeproj" --scheme "MyApp"
+          xcode-project build-ipa
     publishing:
       app_store_connect:
         auth: integration
