@@ -15,12 +15,16 @@ workflows:
           mkdir -p Sources/Assets.xcassets/AppIcon.appiconset
           cat <<EOF > Sources/Assets.xcassets/AppIcon.appiconset/Contents.json
           {
-            "images": [{"idiom": "ios-marketing", "size": "1024x1024", "scale": "1x", "filename": "icon.png"}],
+            "images": [
+              {"idiom": "iphone", "size": "60x60", "scale": "2x", "filename": "icon-120.png"},
+              {"idiom": "ios-marketing", "size": "1024x1024", "scale": "1x", "filename": "icon-1024.png"}
+            ],
             "info": {"author": "xcode", "version": 1}
           }
           EOF
           echo "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=" | base64 --decode > temp.png
-          sips -z 1024 1024 temp.png --out Sources/Assets.xcassets/AppIcon.appiconset/icon.png
+          sips -z 120 120 temp.png --out Sources/Assets.xcassets/AppIcon.appiconset/icon-120.png
+          sips -z 1024 1024 temp.png --out Sources/Assets.xcassets/AppIcon.appiconset/icon-1024.png
       - name: Generowanie projektu (xcodegen)
         script: |
           brew install xcodegen
