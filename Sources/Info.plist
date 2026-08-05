@@ -13,7 +13,7 @@
     <key>CFBundleShortVersionString</key>
     <string>1.0</string>
     <key>CFBundleVersion</key>
-    <string>10</string>
+    <string>11</string>
     <key>LSRequiresIPhoneOS</key>
     <true/>
     <key>CFBundleIconName</key>
@@ -24,5 +24,7 @@
     <true/>
     <key>GADApplicationIdentifier</key>
     <string>ca-app-pub-6681851361306996~6425685380</string>
+    <key>NSUserTrackingUsageDescription</key>
+    <string>Twoja zgoda pozwala nam wyświetlać spersonalizowane reklamy, dzięki którym aplikacja pozostaje darmowa.</string>
 </dict>
 </plist>
